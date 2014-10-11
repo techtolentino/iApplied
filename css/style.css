@@ -2,3 +2,12 @@
 .ember-application {
     margin: 20px;
 }
+
+.active {
+	color: #ff3b4f !important;
+}
+
+.navbar-brand {
+	background: #44b7ff;
+	color: #fffffe !important;
+}
