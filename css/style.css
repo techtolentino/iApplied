@@ -3,8 +3,16 @@
     margin: 20px;
 }
 
+.navbar-default {
+	background-color: #44B7FF;
+}
+
+.navbar-default .navbar-nav>li>a  {
+	color: #fffffe;
+}
+
 .active {
-	color: #ff3b4f !important;
+	color: #004095 !important;
 }
 
 .navbar-brand {

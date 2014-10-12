@@ -14,8 +14,8 @@
       <div class="navbar-inner">
         <a href="#" class="navbar-brand">iApplied</a>
         <ul class="nav navbar-nav">
-          <li>{{#link-to 'applications'}}Applications{{/link-to}}</li>
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
+          <li>{{#link-to 'applications'}}Applications{{/link-to}}</li>
         </ul>
       </div>
     </nav>
@@ -23,10 +23,17 @@
     {{outlet}}
   </script>
 
-  <script type="text/x-handlebars" id="about">
     <div class="About">
-      <p>This will be the entire about section</p>
+      <div class="container">
+        <div class="span-6">
+          <h1>iApplied</h1>
+          <h3>App Tracking App</h3>
+          <p>Staying organized with all of your applications could never be this easy. Some apps organize lists, others keep track of data, some are meant for school, others are for business...  </p>
+        </div>
+        <div class="span-6"></div>
+      </div>
     </div>
+  <script type="text/x-handlebars" id="about">
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
