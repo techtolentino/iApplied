@@ -1,4 +1,12 @@
 /* Put your CSS here */
+body { 
+  background: url(../img/school.png) repeat center center fixed; 
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+}
+
 .ember-application {
     margin: 20px;
 }
