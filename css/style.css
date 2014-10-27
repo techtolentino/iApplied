@@ -38,6 +38,7 @@ body {
   width: 80%;
   border-radius: 10px;
   margin: 35px 25px 25px 25px;
+  border: thin solid #909090;
 }
 
 #desk-div {
@@ -47,4 +48,8 @@ body {
 .navbar-brand {
 	background: #44b7ff;
 	color: #fffffe !important;
+}
+
+.navbar {
+  border-radius: 0;
 }
