@@ -1,4 +1,7 @@
 /* Put your CSS here */
+
+/** {outline: 1px solid red;}*/
+
 body { 
   background: url(../img/school.png) repeat center center fixed; 
   -webkit-background-size: auto;
@@ -15,12 +18,30 @@ body {
 	background-color: #44B7FF;
 }
 
+.nav>li {
+  float: left !important;
+}
+
+.navbar-nav {margin:0;}
+
 .navbar-default .navbar-nav>li>a  {
 	color: #fffffe;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }
 
 .active {
 	color: #004095 !important;
+}
+
+#desk-image {
+  width: 80%;
+  border-radius: 10px;
+  margin: 35px 25px 25px 25px;
+}
+
+#desk-div {
+  text-align: center;
 }
 
 .navbar-brand {
