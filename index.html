@@ -15,7 +15,7 @@
         <a href="#" class="navbar-brand">iApplied</a>
         <ul class="nav navbar-nav">
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
-          <li>{{#link-to 'applications'}}Applications{{/link-to}}</li>
+          <li>{{#link-to 'posts'}}Applications{{/link-to}}</li>
         </ul>
       </div>
     </nav>
@@ -27,8 +27,8 @@
     <div class="About">
       <div class="container">
         <div class="col-md-6">
-          <h1>iApplied</h1>
-          <h3>App Tracking App</h3>
+          <h1>About</h1>
+          <h3>iApplied</h3>
           <p>Staying organized with all of your applications could never be this easy. Some apps organize lists, others keep track of data, some are meant for school, others are for business...</p>
         </div>
         <div class="col-md-6" id="desk-div">
@@ -37,6 +37,44 @@
       </div>
     </div>
   </script>
+  
+  <script type="text/x-handlebars" id="posts">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <table class='table'>
+            <thead>
+              <tr><th>Recent Apps</th></tr>
+            </thead>
+            <tbody>
+              {{#each}}
+              <tr><td>
+                  {{title}} <small class='muted'>by {{author.name}}</small>
+              </td></tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <div class="span9">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="post">
+    <h1>{{title}}</h1>
+    <h2>by {{author.name}} <small class='muted'>({{date}})</small></h2>
+    <hr>
+    <div class="intro">
+      {{excerpt}}
+    </div>
+    <div class="below-the-fold">
+      {{body}}
+    </div>
+  </script>
+
+
 
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-1.1.2.js"></script>
