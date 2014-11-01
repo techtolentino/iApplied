@@ -1,5 +1,21 @@
 App = Ember.Application.create();
 
+var posts = [{
+	id: '1',
+	title: 'Web Developer',
+	company: {name: "Charity Dynamics"},
+	date: new Date('10-27-2014'),
+	excerpt: "Know some ill code shit, perf! You'd make a greate FED.",
+	body: "Apply all of your HTML CSS and JS skills in new fashion"
+}, {
+	id: '2',
+	title: 'HTML & CSS Volunteer',
+	company: {name: "MakerSquare"},
+	date: new Date('10-25-2014'),
+	excerpt: "Know some ill code shit, perf! You'd make a greate BED.",
+	body: "Apply all of your Database and Software Design skills in new fashion"
+}];
+
 App.Router.map(function(){
 	this.resource('about');
 	this.resource('posts', function (){
@@ -42,19 +58,3 @@ var showdown = new Showdown.converter();
 Ember.Handlebars.helper('format-markdown', function(input){
 	return new Handlebars.SafeString(showdown.makeHtml(input));
 });
-
-var posts = [{
-	id: '1',
-	title: 'Front End Developer',
-	author: {name: "R2D2"},
-	date: new Date('12-27-2012'),
-	excerpt: "Know some ill code shit, perf! You'd make a greate FED.",
-	body: "Apply all of your HTML CSS and JS skills in new fashion"
-}, {
-	id: '2',
-	title: 'Back End Developer',
-	author: {name: "C3PO"},
-	date: new Date('12-25-2012'),
-	excerpt: "Know some ill code shit, perf! You'd make a greate BED.",
-	body: "Apply all of your Database and Software Design skills in new fashion"
-}];

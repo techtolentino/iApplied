@@ -53,3 +53,11 @@ body {
 .navbar {
   border-radius: 0;
 }
+
+#navbar-logo {
+  background-color: #005595;
+}
+
+.below-the-fold {
+  margin-bottom: 50px;
+}

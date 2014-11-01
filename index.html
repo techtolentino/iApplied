@@ -12,7 +12,7 @@
   <script type="text/x-handlebars">
     <nav class="navbar navbar-default" role="navigation">
       <div class="navbar-inner">
-        <a href="#" class="navbar-brand">iApplied</a>
+        <a href="#" class="navbar-brand" id="navbar-logo">iApplied</a>
         <ul class="nav navbar-nav">
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
           <li>{{#link-to 'posts'}}Applications{{/link-to}}</li>
@@ -44,13 +44,13 @@
         <div class="col-md-3">
           <table class='table'>
             <thead>
-              <tr><th>Recent Apps</th></tr>
+              <tr><th>iApplied to:</th></tr>
             </thead>
             <tbody>
               {{#each}}
               <tr><td>
                 {{#link-to 'post' this}}
-                  {{title}} <small class='text-muted'>by {{author.name}}</small>
+                  {{title}} <small class='text-muted'>@ {{company.name}}</small>
                 {{/link-to}}
               </td></tr>
               {{/each}}
@@ -65,15 +65,9 @@
   </script>
 
   <script type="text/x-handlebars" id="post">
-    {{#if isEditing}}
-      {{partial 'post/edit'}}
-        <button {{action 'doneEditing'}}>Done</button>
-    {{else}}
-        <button {{action 'edit'}}>Edit</button>
-    {{/if}}
 
     <h1>{{title}}</h1>
-    <h2>{{author.name}} <small class='text-muted'>{{format-date date}}</small></h2>
+    <h2>{{company.name}} <small class='text-muted'>{{format-date date}}</small></h2>
     <hr>
     <div class="intro">
       {{format-markdown excerpt}}
@@ -81,6 +75,13 @@
     <div class="below-the-fold">
       {{format-markdown body}}
     </div>
+
+    {{#if isEditing}}
+      {{partial 'post/edit'}}
+        <button {{action 'doneEditing'}}>Done</button>
+    {{else}}
+        <button {{action 'edit'}}>Edit</button>
+    {{/if}}
   </script>
 
   <script type="text/x-handlebars" id="post/_edit">
