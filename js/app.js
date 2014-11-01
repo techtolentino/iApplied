@@ -13,6 +13,36 @@ App.PostsRoute = Ember.Route.extend({
 	}
 });
 
+App.PostRoute = Ember.Route.extend({
+	model: function(params){
+		return posts.findBy('id', params.id);
+	}
+});
+
+App.PostController = Ember.ObjectController.extend({
+	isEditing: false,
+
+		actions: {
+			edit: function(){
+				this.set('isEditing', true);
+			},
+
+			doneEditing: function(){
+				this.set('isEditing', false);
+			}
+		}
+});
+
+Ember.Handlebars.helper('format-date', function(date){
+	return moment(date).fromNow();
+});
+
+var showdown = new Showdown.converter();
+
+Ember.Handlebars.helper('format-markdown', function(input){
+	return new Handlebars.SafeString(showdown.makeHtml(input));
+});
+
 var posts = [{
 	id: '1',
 	title: 'Front End Developer',
